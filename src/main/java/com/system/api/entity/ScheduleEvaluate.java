@@ -18,20 +18,21 @@ public class ScheduleEvaluate {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(columnDefinition = "nvarchar(200)")
+	@Column(columnDefinition = "nvarchar(200)",nullable = false)
 	private String evaluateNote;
-	
+	@Column(nullable = false)
 	private Float mark1;
-	
+	@Column(nullable = false)
 	private Float mark2;
-	
+	@Column(nullable = false)
 	private Float mark3;
 	
-	@Column(columnDefinition = "nvarchar(200)")
+	@Column(columnDefinition = "nvarchar(200)",nullable = false)
 	private String homeWork;
 	
+	
 	@ManyToOne
-	@JoinColumn(name="schedule_id",nullable = false)
+	@JoinColumn(name="schedule_id",nullable = false,unique = true)
 	private Schedule schedule;
 	
 	

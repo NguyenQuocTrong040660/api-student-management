@@ -1,5 +1,7 @@
 package com.system.api.model;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,25 +10,24 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class DetailEvaluateDTO {
-	
 
 	private Integer id;
-	
+
 	private Integer student_id;
 
 	private String studentName;
-	
+
 	private ScheduleEvaluateDTO scheduleEvaluate;
-	
+
 	private OffenceDTO offence;
-	
-	
+
+	private Date createTime;
+
+	private Date updateTime;
 
 	public DetailEvaluateDTO() {
 		super();
 	}
-	
-	
 
 	public DetailEvaluateDTO(Integer student_id, String studentName, ScheduleEvaluateDTO scheduleEvaluate,
 			OffenceDTO offence) {
@@ -36,8 +37,6 @@ public class DetailEvaluateDTO {
 		this.scheduleEvaluate = scheduleEvaluate;
 		this.offence = offence;
 	}
-
-
 
 	public DetailEvaluateDTO(Integer id, Integer student_id, String studentName, ScheduleEvaluateDTO scheduleEvaluate,
 			OffenceDTO offence) {
@@ -89,8 +88,20 @@ public class DetailEvaluateDTO {
 		this.offence = offence;
 	}
 
-	
-	
-	
+	public Date getCreateTime() {
+		return createTime;
+	}
 
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
+   
 }

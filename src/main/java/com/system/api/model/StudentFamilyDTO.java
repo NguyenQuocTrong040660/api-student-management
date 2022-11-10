@@ -31,6 +31,37 @@ public class StudentFamilyDTO {
 	@JsonIgnore
 	private List<StudentDTO> students;
 
+
+	public StudentFamilyDTO() {
+		super();
+	}
+
+	public StudentFamilyDTO(String motherName, String fatherName, String email1, String phone1,
+			List<StudentDTO> students) {
+		super();
+		this.motherName = motherName;
+		this.fatherName = fatherName;
+		this.email1 = email1;
+		this.phone1 = phone1;
+		this.students = students;
+	}
+
+	public StudentFamilyDTO(Integer id, String motherName, String fatherName, String email1, String phone1,
+			List<StudentDTO> students) {
+		super();
+		this.id = id;
+		this.motherName = motherName;
+		this.fatherName = fatherName;
+		this.email1 = email1;
+		this.phone1 = phone1;
+		this.students = students;
+	}
+
+	
+
+	
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -80,10 +111,9 @@ public class StudentFamilyDTO {
 	public void setStudents(List<StudentDTO> students) {
 		this.students = students;
 	}
-
+	
 	
 
-	
 	
 	
        

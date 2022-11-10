@@ -1,5 +1,7 @@
 package com.system.api.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -33,6 +40,16 @@ public class DetailEvaluate {
 	@ManyToOne
 	@JoinColumn(name="offence_id",nullable = false)
 	private Offence Offence;
+	
+	@CreationTimestamp
+	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern="MM/dd/yyyy")
+	@Column(name="create_at", nullable=false ,updatable=false)
+	private Date createTime;
+	
+	@UpdateTimestamp
+	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern="MM/dd/yyyy")
+	@Column(name="update_at")
+	private Date updateTime;
 
 	public DetailEvaluate() {
 		super();
@@ -96,6 +113,23 @@ public class DetailEvaluate {
 	public void setOffence(Offence offence) {
 		Offence = offence;
 	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
+	
 	
 	
 	

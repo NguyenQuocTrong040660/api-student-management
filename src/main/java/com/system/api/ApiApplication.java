@@ -18,6 +18,10 @@ public class ApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ApiApplication.class, args);
 		System.out.println("Hello");
+		
+		 String[] list = { "a", "b", "a", "c" };
+		 System.out.println(list);
+		
 	}
 
 }

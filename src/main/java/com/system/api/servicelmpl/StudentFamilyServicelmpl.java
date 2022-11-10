@@ -70,5 +70,12 @@ public class StudentFamilyServicelmpl implements StudentFamilyService {
 		
 
 	}
+	
+	public boolean containsSwearWords(String comment) {
+        if (comment.contains("shit")) {
+            return false;
+        }
+        return true;
+    }
 
 }
